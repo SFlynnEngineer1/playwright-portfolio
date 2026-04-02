@@ -48,3 +48,11 @@ class InventoryPage:
         self.page.locator('#react-burger-menu-btn').click()
         self.page.locator('[data-test="logout-sidebar-link"]').click()
 
+    def add_first_item_to_cart(self):
+        """Clicks the Add to cart button for the first item in the list."""
+        self.page.locator('[data-test^="add-to-cart"]').first.click()
+ 
+    def get_first_item_name(self):
+        """Returns the display name of the first item in the inventory list."""
+        return self.page.locator('.inventory_item_name').first.inner_text()
+
